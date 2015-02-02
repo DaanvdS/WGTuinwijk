@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" rightpane="width=device-width, initial-scale=1" /> 
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:700,400' rel='stylesheet' type='text/css' />
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<script>
+			function resizeDivs(){
+				document.getElementById('header').style.width = "80%";
+				document.getElementById('header').style.width = (window.innerWidth - 30) + "px";
+				document.getElementById('headertable').style.width = (window.innerWidth - 30) + "px";
+				document.getElementById('header').style.height = (document.getElementById('header1').clientHeight) + "px";
+				document.getElementById('lowerabdomen').style.width = "100%";
+				document.getElementById('lowerabdomen').style.width = (window.innerWidth - 20) + "px";
+				
+				document.getElementById('lowerabdomen').style.height = 0;
+				document.getElementById('lowerabdomen').style.height = (window.innerHeight - 230) + "px";
+				
+				document.getElementById('container').style.height = 0;
+				document.getElementById('container').style.height = (window.innerHeight - 20) + "px";
+				
+				document.getElementById('rightpane').style.width = 0;
+				document.getElementById('rightpane').style.width = (document.getElementById('lowerabdomen').clientWidth - 215) + "px";
+				
+				document.getElementById('content').style.height = 0;
+				document.getElementById('content').style.height = (document.getElementById('rightpane').clientHeight - 60) + "px";
+				document.getElementById('content').style.width = 0;
+				document.getElementById('content').style.width = (document.getElementById('rightpane').clientWidth) + "px";
+			}
+			function setContentColor(e){
+				console.log(e.parentNode);
+				document.getElementById('content').style.backgroundColor = e.parentNode.style.backgroundColor;
+			}
+		</script>
+		<title></title>
+	</head>
+	<body id="container" onLoad="resizeDivs();" onResize="resizeDivs();">
+		<div id="container">
+			<div id="header">
+				<table id="headertable">
+					<tr>
+						<td><img id="header1" src="images/header1.jpg"></td>
+						<td><img id="header2" src="images/header2.jpg"></td>
+						<td><img id="header3" src="images/header3.jpg"></td>
+					</tr>
+				</table>
+			</div>
+			<div id="lowerabdomen">
+				<div id="leftpane">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum volutpat fermentum. Cras ut posuere odio, quis commodo tortor. Etiam condimentum, turpis quis egestas consectetur, magna ligula sodales leo, at blandit mauris tortor sit amet odio. Maecenas orci tortor, elementum nec viverra vitae, fringilla eget urna. Nulla metus magna, vestibulum vitae turpis vel, hendrerit faucibus lorem. Praesent venenatis ex tortor, sit amet dignissim dolor aliquam non. Nunc vitae magna ac lorem commodo pellentesque ac nec nulla. Morbi at arcu nisl. In ligula enim, pretium ut leo sed, molestie auctor dui. Proin lacinia lacus id leo posuere, quis dignissim lectus aliquet. Nullam venenatis est eget lorem sagittis aliquet. Ut tincidunt erat augue, a efficitur lacus viverra quis. Integer sollicitudin, neque in viverra sodales, urna arcu tempor felis, ac iaculis mi ante vitae orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer leo quam, consequat id mauris id, lobortis mollis odio. Curabitur tristique venenatis dolor id suscipit.</p>
+				</div>
+				<div id="rightpane">
+					<div id="navbar">
+						<table class="links">
+							<tr>
+								<td style="background-color: rgb(255,82,99);"><a onClick="setContentColor(this);" href="#pageone">&nbsp;</a></td>
+								<td style="background-color: rgb(121,194,105);"><a onClick="setContentColor(this);" href="#pageone">&nbsp;</a></td>
+								<td style="background-color: rgb(255,125,8);"><a onClick="setContentColor(this);" href="#pageone">&nbsp;</a></td>
+							</tr>
+						</table>
+					</div>
+					<div id="content">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum volutpat fermentum. Cras ut posuere odio, quis commodo tortor. Etiam condimentum, turpis quis egestas consectetur, magna ligula sodales leo, at blandit mauris tortor sit amet odio. Maecenas orci tortor, elementum nec viverra vitae, fringilla eget urna. Nulla metus magna, vestibulum vitae turpis vel, hendrerit faucibus lorem. Praesent venenatis ex tortor, sit amet dignissim dolor aliquam non. Nunc vitae magna ac lorem commodo pellentesque ac nec nulla. Morbi at arcu nisl. In ligula enim, pretium ut leo sed, molestie auctor dui. Proin lacinia lacus id leo posuere, quis dignissim lectus aliquet. Nullam venenatis est eget lorem sagittis aliquet. Ut tincidunt erat augue, a efficitur lacus viverra quis. Integer sollicitudin, neque in viverra sodales, urna arcu tempor felis, ac iaculis mi ante vitae orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer leo quam, consequat id mauris id, lobortis mollis odio. Curabitur tristique venenatis dolor id suscipit.</p>
+						<p>Nam imperdiet elit eget nunc eleifend, non tempus nisl ullamcorper. Proin at justo ut tellus ultricies volutpat sed a mi. Pellentesque diam turpis, bibendum ac nibh nec, viverra eleifend massa. Praesent iaculis tempus eros nec sagittis. Etiam finibus rutrum laoreet. Aliquam aliquet bibendum augue. Sed pharetra diam ut nulla lacinia vehicula. Cras justo ex, posuere eget erat aliquam, imperdiet aliquet dolor. Cras sodales pretium pharetra. Aliquam tempor tellus at odio porttitor imperdiet. Vestibulum vulputate, diam non scelerisque ultrices, lectus lorem viverra magna, sed consectetur dolor lorem sed elit. Cras a tortor nec elit dapibus rhoncus ullamcorper accumsan elit.</p>
+						<p>Maecenas vestibulum, turpis et suscipit pellentesque, erat lectus efficitur mauris, nec egestas massa neque ut nisl. Nullam accumsan eros accumsan iaculis rhoncus. Donec a pretium quam. In viverra in nibh eget malesuada. Aliquam egestas pretium quam, nec hendrerit sem laoreet id. Vestibulum cursus eleifend mi. Morbi a risus at mauris tincidunt vestibulum a posuere elit. Cras nisl augue, molestie at tortor nec, lacinia dignissim nulla.</p>
+						<p>Sed non leo laoreet, consequat est eget, ultrices enim. Vestibulum et mauris aliquam, auctor tortor et, porta ipsum. Maecenas vulputate, lacus sed faucibus mollis, neque justo placerat dui, pellentesque vestibulum ex nibh id quam. Nulla quis mollis enim, eget mattis est. Fusce sit amet porttitor sem. Aliquam erat volutpat. Proin fringilla lectus at ligula semper, ut accumsan nisi iaculis. Donec orci purus, porttitor scelerisque varius lacinia, molestie id risus. Nulla sodales, risus quis molestie pellentesque, augue tortor cursus massa, a tempor dolor justo a lectus.</p>
+						<p>Suspendisse potenti. Integer eget est velit. In eget augue risus. Ut nec venenatis ex. Integer quis augue dolor. Curabitur vitae hendrerit nunc, sit amet efficitur erat. Integer vitae mi massa. Proin metus mi, laoreet in facilisis in, dignissim ultricies diam. Vivamus nunc diam, fringilla sit amet aliquam nec, egestas quis ex. Donec id posuere enim, ac accumsan lorem. Cras non felis diam. In molestie at metus ut accumsan. Duis imperdiet at lorem et dignissim. Morbi nunc arcu, iaculis id scelerisque eget, imperdiet et elit. Mauris venenatis aliquam diam, vel imperdiet eros lacinia nec. Praesent tortor magna, vehicula quis consectetur sed, facilisis vel metus.</p>
+						<p>Aliquam odio augue, tincidunt eget semper a, pellentesque at justo. Donec euismod blandit ipsum, nec accumsan felis tempus vitae. Donec interdum consectetur metus a dictum. Ut eget tortor sed turpis vestibulum placerat. Vivamus ac ultricies lectus, eu malesuada est. Quisque ultricies, massa nec tempor sagittis, augue nisi interdum nisi, sed efficitur dolor mauris a sem. In scelerisque urna at tincidunt pharetra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse interdum ligula et augue dapibus elementum feugiat ac felis. Quisque eget convallis lorem, non semper elit. Etiam suscipit libero in arcu faucibus mollis. Vivamus vel diam sed odio condimentum vulputate ac nec nisi. Nullam efficitur ut massa a rutrum. Nunc tincidunt est ultricies quam pharetra rutrum. Donec aliquam, enim sed euismod facilisis, arcu justo pulvinar sem, et egestas magna arcu ut mi.</p>
+						<p>Etiam non mattis odio. Sed mollis at diam non facilisis. Aliquam vel nibh nec augue tempor ullamcorper et id sem. Cras finibus vestibulum purus tempus dapibus. Mauris magna turpis, tincidunt nec lorem quis, scelerisque dapibus ante. Cras a nulla at velit dapibus porta. Pellentesque dolor libero, bibendum in convallis ultricies, aliquam eu ligula. Curabitur id eros in justo imperdiet eleifend non in magna. Aliquam porttitor magna eu libero cursus egestas. In quis tellus metus. Curabitur vulputate a ante commodo fringilla. Sed in condimentum nisi. Fusce ut enim ex. Praesent vel ex tellus. Nullam et ipsum dolor.</p>
+						<p>Etiam condimentum tortor quis sapien congue dignissim. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce blandit lectus ante, vitae dictum lacus vestibulum sit amet. Nunc sed nulla vitae massa laoreet viverra. Maecenas at accumsan risus. Morbi ornare justo nec luctus egestas. Proin pellentesque sodales nisi sed lobortis. Nunc aliquet, dui a vulputate posuere, justo enim facilisis tellus, id tincidunt enim tortor pretium quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas iaculis diam ut enim vestibulum interdum. Nunc tellus mi, accumsan nec viverra sit amet, lacinia non sem. In elit sapien, feugiat vitae tincidunt sit amet, tristique a lacus. Nunc ut volutpat erat. Phasellus at tellus eget sapien ultricies faucibus id varius nibh. Proin sagittis sagittis purus, nec dictum lacus convallis elementum. Praesent at felis feugiat, mollis mi id, facilisis arcu.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
