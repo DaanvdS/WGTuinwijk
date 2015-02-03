@@ -2,63 +2,103 @@
 <html>
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" rightpane="width=device-width, initial-scale=1" /> 
+		<meta name="viewport" rightpane="width=1.5*device-width, initial-scale=0.5" /> 
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:700,400' rel='stylesheet' type='text/css' />
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 		<link rel="icon" href="favicon.ico" type="image/x-icon" />
 		<link rel="stylesheet" type="text/css" href="style.css" />
 		<script>
 			function resizeDivs(){
-				document.getElementById('header').style.width = "80%";
-				document.getElementById('header').style.width = (window.innerWidth - 30) + "px";
-				document.getElementById('headertable').style.width = (window.innerWidth - 30) + "px";
-				document.getElementById('header').style.height = (document.getElementById('header1').clientHeight) + "px";
+				var headerHeight = (document.getElementById('headertable').clientWidth / 4);
+				var leftPaneWidth = 200;
+				var browserHeight = window.innerHeight;
+				var browserWidth = window.innerWidth;
+				var marginLeft = 10;
+				var marginRight = 10;
+				var marginLR = marginLeft + marginRight;
+				var marginTop = 10;
+				var marginBottom = 10;
+				var marginTB = marginTop + marginBottom;
+				var px = "px";
+				
+				document.getElementById('header').style.height = document.getElementById('header1').clientHeight + px;
+				document.getElementById('header').style.width = "100%";
+				document.getElementById('header').style.width = (browserWidth - marginLR) + px;
 				document.getElementById('lowerabdomen').style.width = "100%";
-				document.getElementById('lowerabdomen').style.width = (window.innerWidth - 20) + "px";
+				document.getElementById('lowerabdomen').style.width = (browserWidth - marginLR) + px;
+				document.getElementById('lowerabdomen').style.top = (headerHeight + marginTB) + px;
+				document.getElementById('lowerabdomen').style.height = (browserHeight - (headerHeight + 1.5*marginTB)) + px;
+				document.getElementById('container').style.height = (browserHeight - 2*marginTB) + px;
+				document.getElementById('headerbar').style.top = 0.5*(headerHeight - document.getElementById('headerbar').clientHeight) + px;
 				
-				document.getElementById('lowerabdomen').style.height = 0;
-				document.getElementById('lowerabdomen').style.height = (window.innerHeight - 230) + "px";
 				
-				document.getElementById('container').style.height = 0;
-				document.getElementById('container').style.height = (window.innerHeight - 20) + "px";
+				if((document.getElementById('lowerabdomen').clientWidth - (leftPaneWidth + marginLR)) < 1.5*leftPaneWidth){
+					document.getElementById('leftpane').style.visibility = "hidden";
+					document.getElementById('leftpane').style.height = 0;
+					document.getElementById('rightpane').style.left = 0;
+					document.getElementById('rightpane').style.marginLeft = 0;
+					document.getElementById('rightpane').style.width = (document.getElementById('lowerabdomen').clientWidth) + px;
+				} else {
+					document.getElementById('leftpane').style.visibility = "visible";
+					document.getElementById('leftpane').style.height = "100%";
+					document.getElementById('rightpane').style.left = leftPaneWidth;
+					document.getElementById('rightpane').style.marginLeft = 15 + px;
+					document.getElementById('rightpane').style.width = (document.getElementById('lowerabdomen').clientWidth - (leftPaneWidth + marginLR)) + px;
+				}
 				
-				document.getElementById('rightpane').style.width = 0;
-				document.getElementById('rightpane').style.width = (document.getElementById('lowerabdomen').clientWidth - 215) + "px";
+				if(document.getElementById('headerimages').clientWidth >= 1175){
+					document.getElementById('header1').removeAttribute("style");
+					document.getElementById('header3').removeAttribute("style");
+				} else {
+					document.getElementById('header1').style.borderRadius = "15px 0px 0px 15px";
+					document.getElementById('header3').style.borderRadius = "0px 15px 15px 0px";
+				}
 				
-				document.getElementById('content').style.height = 0;
-				document.getElementById('content').style.height = (document.getElementById('rightpane').clientHeight - 60) + "px";
-				document.getElementById('content').style.width = 0;
-				document.getElementById('content').style.width = (document.getElementById('rightpane').clientWidth) + "px";
+				document.getElementById('content').style.height = (document.getElementById('rightpane').clientHeight - 3.5*marginTB) + px;
+				document.getElementById('content').style.width = (document.getElementById('rightpane').clientWidth) + px;
 			}
+			
 			function setContentColor(e){
 				console.log(e.parentNode);
 				document.getElementById('content').style.backgroundColor = e.parentNode.style.backgroundColor;
-			}
+			} 
 		</script>
 		<title></title>
 	</head>
 	<body id="container" onLoad="resizeDivs();" onResize="resizeDivs();">
 		<div id="container">
 			<div id="header">
-				<table id="headertable">
-					<tr>
-						<td><img id="header1" src="images/header1.jpg"></td>
-						<td><img id="header2" src="images/header2.jpg"></td>
-						<td><img id="header3" src="images/header3.jpg"></td>
-					</tr>
-				</table>
+				<div id="headerwrapper">
+					<div id="headerbar">
+						<h2>Woongroep Tuinwijk</h2><h4>Stad Utrecht</h4>
+					</div>
+					<div id="headerimages">
+						<table id="headertable">
+							<tr>
+								<td><img id="header1" style="border-radius: 15px 0px 0px 15px;" src="images/grey/header1.jpg"></td>
+								<td><img id="header2" src="images/grey/header2.jpg"></td>
+								<td><img id="header3" style="border-radius: 0px 15px 15px 0px;" src="images/grey/header3.jpg"></td>
+							</tr>
+						</table>
+					</div>
+				</div>
 			</div>
 			<div id="lowerabdomen">
 				<div id="leftpane">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum volutpat fermentum. Cras ut posuere odio, quis commodo tortor. Etiam condimentum, turpis quis egestas consectetur, magna ligula sodales leo, at blandit mauris tortor sit amet odio. Maecenas orci tortor, elementum nec viverra vitae, fringilla eget urna. Nulla metus magna, vestibulum vitae turpis vel, hendrerit faucibus lorem. Praesent venenatis ex tortor, sit amet dignissim dolor aliquam non. Nunc vitae magna ac lorem commodo pellentesque ac nec nulla. Morbi at arcu nisl. In ligula enim, pretium ut leo sed, molestie auctor dui. Proin lacinia lacus id leo posuere, quis dignissim lectus aliquet. Nullam venenatis est eget lorem sagittis aliquet. Ut tincidunt erat augue, a efficitur lacus viverra quis. Integer sollicitudin, neque in viverra sodales, urna arcu tempor felis, ac iaculis mi ante vitae orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer leo quam, consequat id mauris id, lobortis mollis odio. Curabitur tristique venenatis dolor id suscipit.</p>
+					<h2>Informatie:</h2>
+					<p>Woongroep Tuinwijk<br>
+					van Esveldstraat 33<br>
+					3572 KK Utrecht</p>
+					<p>Telefoon: 030 228 35 25</p>
+					<p>Email: <a class="small" href="mailto: info@woongroeptuinwijk.nl">info@woongroeptuinwijk.nl</a></p>
 				</div>
 				<div id="rightpane">
 					<div id="navbar">
 						<table class="links">
 							<tr>
-								<td style="background-color: rgb(255,82,99);"><a onClick="setContentColor(this);" href="#pageone">&nbsp;</a></td>
-								<td style="background-color: rgb(121,194,105);"><a onClick="setContentColor(this);" href="#pageone">&nbsp;</a></td>
-								<td style="background-color: rgb(255,125,8);"><a onClick="setContentColor(this);" href="#pageone">&nbsp;</a></td>
+								<td style="background-color: rgb(255,82,99);"><a onClick="setContentColor(this);" href="#pageone"><h4>Informatie</h4></a></td>
+								<td style="background-color: rgb(121,194,105);"><a onClick="setContentColor(this);" href="#pagetwo"><h4>Afbeeldingen</h4></a></td>
+								<td style="background-color: rgb(255,125,8);"><a onClick="setContentColor(this);" href="#pagethree"><h4>Contact</h4></a></td>
 							</tr>
 						</table>
 					</div>
