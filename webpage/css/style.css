@@ -1,0 +1,169 @@
+* {
+	margin: 0;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+}
+
+div {
+	border-radius: 15px;
+}
+
+li {
+	color: white;
+}
+
+.links {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.links a {
+	display: block;
+	text-decoration:none;
+	height: 44px;
+}
+
+.links td {
+	width: 33%;
+	height: 44px;
+	text-align: center;
+}
+
+.small {
+	font-size: small;
+}
+
+.gone {
+	display: none;
+}
+
+.fullwidth {
+	width: 100%;
+}
+
+.eightywidth {
+	width: 80%;
+}
+
+p, h1, h2, h3, h4, h5, h6, a {
+	font-family: Open Sans;
+}
+
+#map-canvas {
+	width: 100%;
+	height: 400px;
+}
+
+#container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-color: white;
+	margin: 0px;
+}
+
+#header {
+    width: 100%;
+    height: 100%;
+	margin: 10px;
+	background-color: rgba(0,0,0,0.5);
+    position: relative;
+}
+
+#headerbar, 
+#headerimages {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+
+#headerbar {
+    z-index: 10;
+	background-color: rgba(25,182,159,0.75);
+	border-radius: 0;
+	height: auto;
+	text-align: center;
+}
+
+#header table {
+	width: 100%;
+	max-width: 1150px;
+	margin-left: auto;
+	margin-right: auto;
+	border-collapse: collapse;
+	border-radius: 15px;
+	height: 100%;
+}
+
+#header td {
+	width: 33%;
+	height: 44px;
+	padding: 0;
+}
+
+#header img {
+	height: 100%;
+}
+
+#lowerabdomen {
+	height: 50%;
+	background-color: white;
+	top: 180px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#leftpane {
+	width: 200px;
+	background-color: rgb(25,182,159);
+	height: 100%;
+	float: left;
+	overflow: hidden;
+}
+
+#leftpane p, h2, h4, a {
+	color: white;
+	padding: 8px;
+}
+
+#rightpane {
+	left: 100px;
+	width: 70%;
+	height: 100%;
+	float: left;
+	margin-left: 15px;
+}
+
+#navbar {
+	width: 100%;
+	height: 50px;
+	margin-bottom: 20px;
+}
+
+#navbar a {
+	border-radius: 15px;
+}
+
+#content {
+	width: 100%;
+	height: 80%;
+	background-color: rgb(255,82,99);
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#content img {
+	
+}
+
+#content p, h2, h4, a {
+	color: white;
+	padding: 8px;
+}
